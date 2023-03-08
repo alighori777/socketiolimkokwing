@@ -1,0 +1,5 @@
+export const SELECTED_USER = 'SELECTED_USER';
+export const CONNECTED_USERS = 'CONNECTED_USERS';
+export const CHAT_WINDOW = 'CHAT_WINDOW';
+export const LOGGEDIN_USER = 'LOGGEDIN_USER';
+export const MESSAGES = 'MESSAGES';

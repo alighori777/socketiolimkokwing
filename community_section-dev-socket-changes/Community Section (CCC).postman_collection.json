@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "23addab9-4ca7-41e3-8c3c-f5b180f6972b",
+		"name": "Community Section (CCC)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"type\": \"lecturer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/users",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/users/356f09f6e43b45d2b5c3cd907f32ba45",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"users",
+								"356f09f6e43b45d2b5c3cd907f32ba45"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/users",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/users/b9db8b864191495782a93d586ac84b20",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"users",
+								"b9db8b864191495782a93d586ac84b20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/login/6597109ee4c14656b5c2e2bbe7f025fc",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"login",
+								"6597109ee4c14656b5c2e2bbe7f025fc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat Room",
+			"item": [
+				{
+					"name": "Mark as Read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Chat Room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTA5ZWU0YzE0NjU2YjVjMmUyYmJlN2YwMjVmYyIsInVzZXJUeXBlIjoibGVjdHVyZXIiLCJpYXQiOjE2NzE4NjU1MjV9.B0gcuksn2LVfKZg1WerlQ-tuqe9c3Op-YlfFX18e528",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/room/",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"room",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Chat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTA5ZWU0YzE0NjU2YjVjMmUyYmJlN2YwMjVmYyIsInVzZXJUeXBlIjoibGVjdHVyZXIiLCJpYXQiOjE2NzE5Nzg0NjV9.tFg3WHU91eUqaNNx-rtjxmP6-GEeuyifWusjSoa-zHw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userIds\": [\"356f09f6e43b45d2b5c3cd907f32ba45\", \"6597109ee4c14656b5c2e2bbe7f025fc\"],\r\n    \"type\": \"consumer_to_consumer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/room/initiate",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"room",
+								"initiate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Chat Room by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTA5ZWU0YzE0NjU2YjVjMmUyYmJlN2YwMjVmYyIsInVzZXJUeXBlIjoibGVjdHVyZXIiLCJpYXQiOjE2NzE4NjU1MjV9.B0gcuksn2LVfKZg1WerlQ-tuqe9c3Op-YlfFX18e528",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/room/1508f6e9950e49839a1fba72a67283bc",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"room",
+								"1508f6e9950e49839a1fba72a67283bc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Message by Room Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTA5ZWU0YzE0NjU2YjVjMmUyYmJlN2YwMjVmYyIsInVzZXJUeXBlIjoibGVjdHVyZXIiLCJpYXQiOjE2NzE4NjU1MjV9.B0gcuksn2LVfKZg1WerlQ-tuqe9c3Op-YlfFX18e528",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/room/1508f6e9950e49839a1fba72a67283bc/message",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"room",
+								"1508f6e9950e49839a1fba72a67283bc",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTA5ZWU0YzE0NjU2YjVjMmUyYmJlN2YwMjVmYyIsInVzZXJUeXBlIjoibGVjdHVyZXIiLCJpYXQiOjE2NzE4NjU1MjV9.B0gcuksn2LVfKZg1WerlQ-tuqe9c3Op-YlfFX18e528",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Work/CCC/community_section/CODE_OF_CONDUCT.md"
+								},
+								{
+									"key": "messageText",
+									"value": "Test FormData",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/room/1508f6e9950e49839a1fba72a67283bc/message",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"room",
+								"1508f6e9950e49839a1fba72a67283bc",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTA5ZWU0YzE0NjU2YjVjMmUyYmJlN2YwMjVmYyIsInVzZXJUeXBlIjoibGVjdHVyZXIiLCJpYXQiOjE2NzE5Nzg0NjV9.tFg3WHU91eUqaNNx-rtjxmP6-GEeuyifWusjSoa-zHw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/file/1508f6e9950e49839a1fba72a67283bc/CODE_OF_CONDUCT.md",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"file",
+								"1508f6e9950e49839a1fba72a67283bc",
+								"CODE_OF_CONDUCT.md"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Erp",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "usr",
+									"value": "nursyaza@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "pwd",
+									"value": "nH2FLKV",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/erp/login",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"erp",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student By Program",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NfdG9rZW4iOiJnSXRoZUxVaXFlTjJERE9qY0RCYzNRUmRCdTF1WksiLCJleHBpcmVzX2luIjozNjAwLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwic2NvcGUiOiJhbGwgb3BlbmlkIiwicmVmcmVzaF90b2tlbiI6IndxaFZ6dnIxZDFkSGkxaEVmanlhZTlvSHBSTWREYiIsImlkX3Rva2VuIjoiYidleUowZVhBaU9pSnFkM1FpTENKaGJHY2lPaUpJVXpJMU5pSjkuZXlKaGRXUWlPaUpoWVdFeU56SXpOR05rSWl3aVpYaHdJam94Tmpjek9ETTNOell5TENKemRXSWlPaUpoTmpGaU4yWXdNMkk1WW1NM1lXTXdOalEzWWpCbE4yUmxORGhpWVRZME1tRmtOMkk1WW1JaUxDSnBjM01pT2lKb2RIUndPaTh2WTIxek1tUmxkaTVzYVcxcmIydDNhVzVuTG01bGRDOGlMQ0poZEY5b1lYTm9Jam9pWkcweVpHMHpNbUZLUVVwamRqQkdYMHhEUWtSWlVTSjkuZDZ4emtQWXpSN1U3RlI1RlZvSGloRmt3NWhURlJpT1dLU2xrLVN0Ukg5USciLCJpYXQiOjE2NzM4MDUzNjJ9.34mJGH7qDf4uknTADVLuRv2fFkISujnSM9fsrzONkn8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/erp/student/module",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"erp",
+								"student",
+								"module"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student By Module",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NfdG9rZW4iOiJPZ3U3cTR6bGY3RTdrdGo5VzRMTkdiMzVFd0RSUUciLCJleHBpcmVzX2luIjozNjAwLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwic2NvcGUiOiJhbGwgb3BlbmlkIiwicmVmcmVzaF90b2tlbiI6Ilk4ampaeVUwWnBjZ0RwZjZIU0FVdEJ2bk41SEZpQyIsImlkX3Rva2VuIjoiYidleUowZVhBaU9pSnFkM1FpTENKaGJHY2lPaUpJVXpJMU5pSjkuZXlKaGRXUWlPaUpoWVdFeU56SXpOR05rSWl3aVpYaHdJam94Tmpjek56UTVOVFF3TENKemRXSWlPaUpoTmpGaU4yWXdNMkk1WW1NM1lXTXdOalEzWWpCbE4yUmxORGhpWVRZME1tRmtOMkk1WW1JaUxDSnBjM01pT2lKb2RIUndPaTh2WTIxek1tUmxkaTVzYVcxcmIydDNhVzVuTG01bGRDOGlMQ0poZEY5b1lYTm9Jam9pUkdSc1Z6SmxlbTAzU1RGMU9GWmhMVGhOWlhWQ1p5SjkuOVhsQ29oTURYcUR4V1pLNXVkSkZBcm5VaTdkX1E2bHdvSHFZQXUzZXpWTSciLCJpYXQiOjE2NzM3MTcxMzh9.7Ou_qBEXj_iaOahhqMgY4O9RqGBAEfPX_CVjafQIPfA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}:{{LOCAL_PORT}}/erp/student/program",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"port": "{{LOCAL_PORT}}",
+							"path": [
+								"erp",
+								"student",
+								"program"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "LOCAL_URL",
+			"value": "localhost"
+		},
+		{
+			"key": "LOCAL_PORT",
+			"value": "3000"
+		}
+	]
+}

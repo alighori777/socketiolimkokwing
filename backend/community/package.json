@@ -1,0 +1,24 @@
+{
+  "name": "community_section",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon index.js",
+    "start:server": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@withvoid/make-validation": "^1.0.5",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.4.0",
+    "socket.io": "^4.6.0",
+    "socketio-jwt": "^4.6.2",
+    "superagent": "^8.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

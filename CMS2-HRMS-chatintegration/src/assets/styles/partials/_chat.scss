@@ -1,0 +1,107 @@
+.chat-window {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 600px;
+    z-index: 8;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    overflow: hidden;
+    > .ant-card-body {
+        height: 100%;
+    }
+    &.active {
+        left: 100%;
+    }
+}
+
+.input-card {
+    height: auto;
+    width: 100%;
+    border-radius: 0;
+    background-color: $menu-gray;
+    > .ant-card-body {
+        padding: 15px 20px;
+            height: auto;
+    }
+}
+
+.chat-body {
+    height: calc(100% - 222px);
+    width: 100%;
+    > .ant-card-body {
+        padding: 0;
+        height: 100%;
+    }
+    .scroller {
+        height: 100%;
+    }
+    .scrol-pad {
+        padding: 0 30px;
+    }
+}
+
+.chat-header {
+    height: auto;
+    width: 100%;
+    > .ant-card-body {
+        height: auto;
+    }
+}
+
+.message-box {
+    max-width: 478px;
+    margin-top: 30px;
+    display: flex;
+}
+.message-tag {
+    padding: 12px;
+    background-color: $menu-gray;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 12px;
+}
+.empty-space {
+    width: 42px;
+}
+
+.incoming {
+    margin-left: auto;
+    justify-content: flex-end;
+    .message-tag {
+        background-color: $blue;
+        color: $white;
+        text-align: right;
+    }
+}
+.sameuser {
+    margin-top: 5px;
+}
+
+.chat-info {
+    padding: 0.5em 0.75em;
+    background-color: $blue;
+    margin: 0.5em 0 0;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.other-chat-info {
+    background-color: $gray;
+}
+
+.online {
+    border: 1px solid $green-color;
+}
+
+.offline {
+    
+}
+
+.icon-text-wrap {
+    width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

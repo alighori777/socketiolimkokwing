@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SocketsChat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<ul id="message_list"></ul>
+<form id="message_area" action="">
+    <input id="text_area" autocomplete="off" />
+    <button>Send</button>
+</form>
+
+<script>
+    const socket = io(':3000');
+
+    const userId = window.prompt("Enter the userId");
+    socket.emit('identity', userId);
+
+    const otherUserId = window.prompt("Enter the otherUserId");
+    const room = window.prompt("Enter the roomId");
+
+    socket.emit('subscribe', {room, otherUserId});
+
+    const messageForm = document.getElementById('message_area');
+    const textInput = document.getElementById('text_area');
+
+    messageForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (textInput.value) {socket.emit('new message', textInput.value);
+            textInput.value = '';
+        }
+    });
+
+    socket.on('new message', (data) => {
+        const messageList = document.getElementById('message_list');
+        const chatItem = document.createElement('li');
+        chatItem.textContent = data.user + ': ' + data.message;
+        messageList.appendChild(chatItem);
+        window.scrollTo(0, document.body.scrollHeight);
+    });
+</script>
+
+</body>
+
+</html>
